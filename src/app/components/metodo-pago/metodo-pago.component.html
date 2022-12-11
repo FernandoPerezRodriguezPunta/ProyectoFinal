@@ -1,0 +1,87 @@
+
+
+  
+    <table *ngIf="carritoLLeno" class="table" >
+      <thead>
+        <tr>
+      
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Direccion</th>
+          <th>Cantidad</th>
+          <th>Tipo</th>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Total</th>
+          <th>Imagen</th>
+     
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of collection.data" >
+          <td>{{ item.nombre }}</td>
+          <td>{{ item.apellidos}}</td>
+          <td>{{ item.direccion}}</td>
+          <td>{{item.cantidad}}</td>
+          <td>{{item.tipo}}</td>
+          <td>{{item.marca}}</td>
+          <td>{{item.modelo}}</td>
+          <td>{{item.total}}</td>
+          <td><img src="../../../assets/img/productos/{{item.imagen}}.PNG" class="img-fluid" width="200px" height="200px" alt="imagen del producto"></td>
+
+          
+
+        <td>
+          
+         
+          </td>
+
+
+
+        </tr>
+
+
+
+      </tbody>
+  
+    </table>
+
+
+
+<form  class="form-pagar" (ngSubmit)="terminarCompra()" [formGroup]="metodoDePagoActual">
+
+
+   <legend>Añadir metododo de pago</legend>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" formControlName="titular"  placeholder="titular">
+      <label >Títular:</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" formControlName="tarjeta"  placeholder="numero de tarjeta">
+      <label >Nº Tarjeta:</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" formControlName="cvv"  placeholder="numero cvv">
+      <label >CVV</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="date" class="form-control" formControlName="fechaCaducidad"  placeholder="fecha de caducidad">
+      <label >Fecha de caducidad:</label>
+    </div>
+
+    <div class="d-grid gap-2 mb-3">
+      <button class="btn btn-primary btn-lg" type="submit">terminar la compra</button>
+    </div>
+
+   </form>
+
+
+  
+
+
+
+

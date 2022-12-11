@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: auto;
+  background-color: #2b3770;
+}
+
+.form-floating {
+  text-align: start;
+}
+
+.errorlabel {
+  margin-left: 5px;
+}

@@ -1,0 +1,59 @@
+
+
+<div class="wrapper">
+  <div class="body" *ngIf="!loading">
+    <img class="logo" src="../../../assets/img/login.png" alt="login" />
+
+    <h1>Login</h1>
+
+    <form (ngSubmit)="login()" [formGroup]="loginusuario">
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          formControlName="email"
+          class="form-control"
+          placeholder="name@example.com"
+        />
+        <label>Email</label>
+       <span
+          *ngIf="
+            loginusuario.get('email')?.hasError('required') &&
+            loginusuario.get('email')?.touched
+          "
+          class="text-danger errorLabel"
+        >
+          El<strong>correo</strong> es obligatorio
+        </span>
+        <span
+          *ngIf="
+            loginusuario.get('email')?.hasError('email') &&
+            loginusuario.get('email')?.touched
+          "
+          class="text-danger errorLabel"
+        >
+          El<strong>correo</strong> es invalido
+        </span>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="password"
+          formControlName="password"
+          class="form-control"
+          placeholder="Password"
+        />
+        <label>Password</label>
+      </div>
+
+      <div class="d-grid gap-2">
+        <input class="btn btn-primary btn-lg" type="submit">
+      </div>
+
+      <p class="mt-3">
+        No tienes cuenta?<a routerLink="/registrar-usuario">Registrar</a>
+      </p>
+      <a class="mt-3" routerLink="/recuperar-password">Recuperar Contraseña</a>
+    </form>
+  </div>
+
+  <app-spinner *ngIf="loading"></app-spinner>
+</div>

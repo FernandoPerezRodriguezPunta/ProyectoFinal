@@ -1,0 +1,73 @@
+<div *ngIf="comprobar"> <!--para que no muestre nada en caso de acceso del no administrador-->
+  <form (ngSubmit)="rellenar()" [formGroup]="productoActual"> 
+    <div class="form-floating mb-3">
+    <select name="color"  class="form-control"     formControlName="tipo">
+      <option value="teclado">teclado</option>
+      <option value="raton">raton</option>
+      <option value="monitor" >monitor</option>
+      <option value="disco duro" >disco duro</option>
+      <option value="tarjeta grafica">tarjeta grafica</option>
+      <option value="memoria ram">memoria ram</option>
+      <option value="procesador">procesador</option>
+      <option value="placa madre">placa madre</option>
+      <option value="fuente alimentacion">fuente alimentacion</option>
+    </select>
+    </div>
+   <!--- <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="tipo"
+        placeholder="Repetir passwordPassword"
+      />
+      <label>Tipo</label>
+    </div>-->
+
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="marca"
+        placeholder="Repetir passwordPassword"
+      />
+      <label>Marca</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="modelo"
+        placeholder="Repetir passwordPassword"
+      />
+      <label>Modelo</label>
+    </div>
+
+
+    <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="imagen"
+          placeholder="Repetir passwordPassword"
+        />
+        <label>Imagen:</label>
+      </div>
+  
+
+
+    <div class="form-floating mb-3">
+      <input
+        type="number"
+        class="form-control"
+        formControlName="precio"
+        placeholder="Repetir passwordPassword"
+      />
+      <label>Precio:</label>
+    </div>
+
+    <div class="d-grid gap-2 mb-3">
+      <button class="btn btn-primary btn-lg" type="submit">Registrar Producto</button>
+    </div>
+  </form>
+</div>

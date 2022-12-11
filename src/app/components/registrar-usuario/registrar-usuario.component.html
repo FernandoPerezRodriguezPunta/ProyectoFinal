@@ -1,0 +1,62 @@
+<div class="wrapper">
+
+   <!--El spinner solo se mostrara en caso de que tarde en cargar-->
+    <div  class="body"> <!--Solo se mostrara en caso de que loading sea false ers decir cuando no se haya producido el registro de un usuario-->
+
+      <img class="logo" src="../../../assets/img/login.png" alt="login" > 
+
+        <h1>Registrarse</h1>
+
+        <form (ngSubmit)="registrar()" [formGroup]="registrarUsuario">
+
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" formControlName="email" placeholder="name@example.com">
+                <label >Email </label>
+                <span *ngIf="registrarUsuario.get('email')?.hasError('required') && registrarUsuario.get('email')?.touched" class="text-danger errorLabel">
+
+                  El<strong>correo</strong> es obligatorio
+
+                </span>  
+
+                <span *ngIf="registrarUsuario.get('email')?.hasError('email') && registrarUsuario.get('email')?.touched" class="text-danger errorLabel">
+
+                  El<strong>correo</strong> es invalido
+
+                </span>
+
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" formControlName="password"  placeholder="Password">
+                <label >Password</label>
+                <span *ngIf="registrarUsuario.get('password')?.hasError('required') && registrarUsuario.get('password')?.touched" class="text-danger errorLabel">
+
+                  La<strong>contraseña</strong> es obligatoria
+
+                </span> 
+                <span *ngIf="registrarUsuario.get('password')?.hasError('minlength') && registrarUsuario.get('email')?.touched" class="text-danger errorLabel">
+
+                  La<strong>contraseña</strong> debe tener minimo 6 carateres
+
+                </span>   
+              
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" formControlName="repetirPassword"  placeholder="Repetir passwordPassword">
+                <label >Repetir password</label>
+              </div>
+
+          
+
+              <div class="d-grid gap-2 mb-3">
+                <button class="btn btn-primary btn-lg" type="submit">Registrarse</button>
+              </div>
+
+              <a class="mt-3"  routerLink="/login">volver</a>
+
+        </form>
+       
+    </div>
+
+
+ 
+</div>

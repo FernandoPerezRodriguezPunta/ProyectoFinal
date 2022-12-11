@@ -1,0 +1,96 @@
+
+<div class="container">
+
+
+
+
+<p>Carrito</p>
+<hr>
+
+
+
+
+
+  
+    <table *ngIf="carritoLLeno" class="table" >
+      <thead>
+        <tr>
+      
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>cantidad</th>
+          <th>Total</th>
+          <th>Imagen</th>
+     
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of collection.data" >
+          <td>{{ item.marca }}</td>
+          <td>{{ item.modelo}}</td>
+          <td>{{ item.cantidad}}</td>
+          <td>{{ item.total}}</td>
+        <td><img src="../../../assets/img/productos/{{item.imagen}}.PNG" class="img-fluid" width="200px" height="200px" alt="imagen del producto"></td>
+    
+        <td>
+            <button type="submit" class="btn btn-danger" (click)="eliminar(item.token)" >
+             Eliminar
+            </button>
+         
+          </td>
+        </tr>
+      </tbody>
+      <p><strong>TOTAL: {{subtotal}}</strong></p>
+    </table>
+
+
+
+
+
+
+    <p class="text-center" *ngIf="!carritoLLeno">Tu cesta está vacía</p>
+
+    <div class="d-flex justify-content-center" *ngIf="!carritoLLeno">
+
+      <button class="btn btn-primary" (click)="volver()">Voler a inicio</button>
+
+
+    </div>
+
+
+    <form  *ngIf="carritoLLeno"  autocomplete="off"   class="form-pagar" [formGroup]="metodoDePagoActual"  (ngSubmit)="terminarCompra()">
+
+
+      <legend>Añadir metododo de pago</legend>
+   
+       <div class="form-floating mb-3">
+         <input type="text" class="form-control" formControlName="titular"  placeholder="titular" required>
+         <label >Títular:</label>
+       </div>
+   
+       <div class="form-floating mb-3">
+         <input type="text" class="form-control" formControlName="tarjeta"  placeholder="numero de tarjeta" required>
+         <label >Nº Tarjeta:</label>
+       </div>
+   
+       <div class="form-floating mb-3">
+         <input type="text" class="form-control" formControlName="cvv"  placeholder="numero cvv" required>
+         <label >CVV</label>
+       </div>
+   
+       <div class="form-floating mb-3">
+         <input type="date" class="form-control" formControlName="fechaCaducidad"  placeholder="fecha de caducidad" required>
+         <label >Fecha de caducidad:</label>
+       </div>
+   
+       <div class="d-grid gap-2 mb-3">
+         <button class="btn btn-primary btn-lg" type="submit" >terminar la compra</button>
+       </div>
+   
+      </form>
+
+
+
+   
+
+  </div>

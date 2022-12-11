@@ -1,0 +1,74 @@
+
+           
+           <form (ngSubmit)="rellenar()" [formGroup]="clienteActual">
+
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" formControlName="nombre"  placeholder="nombre">
+              <label >Nombre</label>
+            </div>
+    
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" formControlName="apellidos"  placeholder="apellidos">
+              <label >Apellidos</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" formControlName="dni"  placeholder="dni">
+              <label >DNI</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" formControlName="fecha_nacimiento"  placeholder="fecha de nacimiento">
+              <label >Fecha nacimiento:</label>
+            </div>
+
+           <div class="form-floating mb-3">
+              <input type="text" class="form-control" formControlName="sexo"  placeholder="sexo">
+              <label >Sexo:</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" formControlName="pais"  placeholder="pais">
+              <label >País</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" formControlName="provincia"  placeholder="provincia">
+              <label >Provincia:</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" formControlName="localidad"  placeholder="localidad">
+              <label >Localidad:</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" formControlName="direccion"  placeholder="direccion">
+              <label >Direccion:</label>
+            </div>
+            
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control" formControlName="telefono"  placeholder="telefono">
+              <label >teléfono:</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" formControlName="codigoPostal"  placeholder="codigo postal">
+              <label >Código Postal:</label>
+            </div>
+
+
+            <div class="d-grid gap-2 mb-3">
+              <button class="btn btn-primary btn-lg" type="submit">Enviar</button>
+            </div>
+
+
+
+           </form>
+
+
+          
+  
+  
+  

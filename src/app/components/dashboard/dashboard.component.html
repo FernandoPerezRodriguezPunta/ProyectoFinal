@@ -1,0 +1,104 @@
+<div class="container">
+  <header
+    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+  >
+    <a
+      href="/"
+      class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
+    >
+      <svg
+        class="bi me-2"
+        width="40"
+        height="32"
+        role="img"
+        aria-label="Bootstrap"
+      >
+        <use xlink:href="#bootstrap"></use>
+      </svg>
+      <img
+        src="../../../assets/img/logo.PNG"
+        class="bi me-2"
+        alt="logo página"
+        width="100"
+        height="100"
+      />
+    </a>
+
+   
+
+    <div class="col-md-3 text-end">
+      <button
+        type="button"
+        class="btn btn-outline-primary me-2"
+        (click)="logIN()"
+      >
+        Iniciar Sesión
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-outline-primary me-2"
+        (click)="logOut()"
+      >
+        Cerrar Sesión
+      </button>
+    </div>
+  </header>
+
+  <div class="container ">
+    <nav class="navbar navbar-light justify-content-between">
+     
+      <form (focus)="onFocus()"    [routerLink]="['list-productos']" (ngSubmit)="buscarProducto()" [formGroup]="tipo"  class="row align-items-start">
+       <!--el search tiene en cuenta que se clike si nque haya nada que se tabule sobre el-->
+        <input
+          class="buscar form-control col"
+          type="search"
+          placeholder="Busca en PC Gaming "
+          aria-label="Search"
+          formControlName="producto"
+      
+        />
+        <button class="boton btn  btn-outline-primary col-md-3" type="submit">buscar</button>
+
+       
+      </form>
+
+      <div class="row align-items-end" *ngIf="!iniciaSesion">
+        <p class="fs-5 text-muted col">{{ dataUser?.email }}</p>
+
+        <img  [routerLink]="['detalles-personales']"
+          src="../../../assets/img/usuario.png"
+          class="col"
+          width="30px"
+          height="30px"
+        />
+
+        <img (click)="irCarrito()"
+          src="../../../assets/img/carrito-de-compras.png"
+          class="col"
+          width="30px"
+          height="30px"
+        />
+        {{cantidad}}
+      </div>
+    </nav>
+  </div>
+
+  <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+ 
+  </div>
+</div>
+
+
+<!--<app-list-productos   *ngIf="peticionProducto!=='message from parent'"  [childMessage]="peticionProducto"></app-list-productos>-->
+
+<!--nav con icono de glyphicon no funciona arreglar mas tarde para sustituir el actual
+  
+  <form class=" buscarform-search content-search navbar-form" action="" method="post">
+  <div class="input-group">
+      <input placeholder="Buscar" class="form-control form-text" type="text" size="15" maxlength="70" />
+      <span class="input-group-btn">
+          <button type="submit" class="btn btn-primary"><span class="icon glyphicon glyphicon-search" aria-hidden="true"></span></button>
+      </span>
+  </div>
+</form>-->
